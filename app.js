@@ -14,7 +14,7 @@
   function renderProducts(){
     const root=$('#productGrid');
     const items=PRODUCTS.filter(p=>state.filter==='all'||p.cat===state.filter);
-    root.innerHTML=items.map(p=>`<article class="product-card">
+    root.innerHTML=items.map(p=>`<article class="product-card" data-product="${p.id}">
       <div class="product-media"><img src="${p.image}" alt="${p.name} ${p.variant}"><span class="product-number">${p.no}</span><span class="product-tag">${p.tag}</span></div>
       <div class="product-body"><span class="product-kicker">G4 THAILAND</span><h3>${p.name}</h3><strong>${p.variant}</strong><p>${p.desc}</p>
       <div class="product-features">${p.features.map(x=>`<span>${x}</span>`).join('')}</div>
